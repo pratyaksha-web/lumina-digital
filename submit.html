@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Art | Lumina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">LUMINA.</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="submit.html" class="active">Submit Art</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main class="container narrow">
+        <h2>Call for Entries</h2>
+        <p class="subtitle">Share your vision with the world. Fill out the form below to be featured.</p>
+
+        <form id="artForm" class="submission-form">
+            <div class="form-group">
+                <label for="artistName">Artist Name</label>
+                <input type="text" id="artistName" placeholder="e.g. Alex Rivera" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="name@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="artTitle">Artwork Title</label>
+                <input type="text" id="artTitle" placeholder="e.g. Neon Dreams" required>
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category">
+                    <option value="photography">Photography</option>
+                    <option value="digital">Digital Art</option>
+                    <option value="oil">Oil / Acrylic</option>
+                    <option value="sculpture">Sculpture</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" rows="5" placeholder="Tell us about the piece..."></textarea>
+            </div>
+            <button type="submit" class="btn">Submit Artwork</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Lumina Gallery.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

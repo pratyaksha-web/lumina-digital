@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Lumina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">LUMINA.</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="submit.html">Submit Art</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h2>Current Exhibition</h2>
+        <p class="subtitle">Click on any artwork to view it in full detail.</p>
+
+        <div class="gallery-grid">
+            <div class="art-card">
+                <img src="image1.jpg" alt="Abstract Colors" class="gallery-img">
+                <div class="art-info"><h3>Neon Dreams</h3><p>By Alex Rivera</p></div>
+            </div>
+            <div class="art-card">
+                <img src="image2.jpg" alt="Oil Painting" class="gallery-img">
+                <div class="art-info"><h3>Silent Hills</h3><p>By Sarah Chen</p></div>
+            </div>
+            <div class="art-card">
+                <img src="image3.jpg" alt="Digital Structure" class="gallery-img">
+                <div class="art-info"><h3>Cyber Structure</h3><p>By J. Doe</p></div>
+            </div>
+            <div class="art-card">
+                <img src="image4.jpg" alt="Portrait" class="gallery-img">
+                <div class="art-info"><h3>The Gaze</h3><p>By Maria V.</p></div>
+            </div>
+            <div class="art-card">
+                <img src="image5.jpg" alt="Fluid Art" class="gallery-img">
+                <div class="art-info"><h3>Fluidity</h3><p>By Kenji O.</p></div>
+            </div>
+            <div class="art-card">
+                <img src="image6.jpg" alt="Modern Sculpture" class="gallery-img">
+                <div class="art-info"><h3>Golden Hour</h3><p>By Alice W.</p></div>
+            </div>
+        </div>
+    </main>
+
+    <div id="imageModal" class="modal">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="caption"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Lumina Gallery.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

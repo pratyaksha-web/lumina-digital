@@ -1,0 +1,284 @@
+/* --- 1. General Setup --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- 2. Navigation Bar --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #777;
+}
+
+/* --- 3. Hero Section (Home - WITH BACKGROUND & ANIMATION) --- */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* Background Image Settings */
+    background-image: url('https://images.unsplash.com/photo-1547891654-e66ed7ebb968?q=80&w=2070&auto=format&fit=crop');
+    background-position: center;
+    background-size: cover;
+    /* Add a dark overlay so white text is readable */
+    background-color: rgba(0,0,0,0.5); 
+    background-blend-mode: overlay;
+    color: white; /* White text for contrast */
+}
+
+/* Styling for the big title */
+.hero-title {
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    font-family: 'Georgia', serif;
+}
+
+/* Animation application to Hero elements */
+/* We start them invisible (opacity:0) so they don't flash before animating */
+.hero-content .hero-title,
+.hero-content p,
+.hero-content .btn {
+    opacity: 0;
+    /* Apply the 'fadeUp' animation defined at the bottom of CSS */
+    animation: fadeUp 1s ease-out forwards;
+}
+
+/* Stagger the animations using delays */
+.hero-content .hero-title { animation-delay: 0.2s; }
+.hero-content p { animation-delay: 0.5s; }
+.hero-content .btn { animation-delay: 0.8s; }
+
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 30px;
+    background-color: white; /* Changed button to white for contrast on dark bg */
+    color: #333;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.3s, transform 0.3s;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #ddd;
+    transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/* --- 4. Main Layouts --- */
+.container {
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.narrow {
+    max-width: 800px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 40px;
+}
+
+/* --- 5. Gallery Grid --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.art-card {
+    background: white;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.art-card:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.art-info {
+    padding-top: 15px;
+    text-align: center;
+}
+
+/* --- 6. About & Contact --- */
+.contact-box {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 40px 0;
+}
+
+/* --- 7. Modal (Popup) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.95); /* Darker background for popups */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 80vh;
+    border: none;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#caption {
+    margin-top: 15px;
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* --- 8. Form Styling --- */
+.submission-form {
+    background: white;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #333;
+    background-color: #fcfcfc;
+}
+
+/* --- 9. Footer & Mobile --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-top: 50px;
+}
+
+@media (max-width: 600px) {
+    nav { flex-direction: column; align-items: center; gap: 15px; }
+    .hero-title { font-size: 2.5rem; }
+    .hero { height: 60vh; padding: 20px; }
+}
+
+/* --- 10. CSS ANIMATION DEFINITIONS --- */
+/* Define the 'fadeUp' animation */
+@keyframes fadeUp {
+    from {
+        /* Start invisible and slightly lower down */
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        /* End fully visible in its final position */
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
